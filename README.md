@@ -5,3 +5,5 @@
 - Error Handling
 - Garbage Collection
 - Strings, I/O Operations, and File Management
+
+[[Hands on practice in class/Full Stack Java Development with Spring MVC, Hibernate, jQuery, and Bootstrap (1)_compressed.pdf]]
