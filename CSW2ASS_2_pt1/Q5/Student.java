@@ -1,4 +1,4 @@
-package CSW2ASS_2_pt1.Q4;
+package CSW2ASS_2_pt1.Q5;
 
 public class Student implements Comparable<Student> {
     String name;
@@ -27,22 +27,22 @@ public class Student implements Comparable<Student> {
 
     public static void main(String[] args) {
         Student[] s1 = new Student[3];
-        s1[0] = new Student("Raool",224151,45);
+        s1[0] = new Student("Raool", 224151, 45);
         s1[1] = new Student("omaan", 545214, 67);
-        s1[2] =  new Student("moana",45781,99);
+        s1[2] = new Student("moana", 45781, 99);
 
-        // this student obj is to be searched from the array
-        Student search = new Student("Raool",224151,45);
-        boolean found = false;
-        for (Student s: s1) {
-            if(search.compareTo(s)==0){
-                System.out.println("The Student is found and the details are: \n"+s);
-                found = true;
+        for (int i = 0; i < s1.length; i++) {
+            for (int j = 1; j < s1.length-i; j++) {
+                if (s1[j-1].compareTo(s1[j])>0){
+                    Student temp = s1[j-1];
+                    s1[j-1] = s1[j];
+                    s1[j] = temp;
+                }
             }
         }
 
-        if(!found){
-            System.out.println("The Student is not found in the array.");
+        for (Student s:s1) {
+            System.out.println(s+"\n");
         }
     }
 }
